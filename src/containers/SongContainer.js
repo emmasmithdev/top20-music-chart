@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import SongList from "../components/SongList.js";
 import TitleBar from "../components/TitleBar.js";
+import "./songContainer.css";
 
 const SongContainer = ({genres}) => {
     const [songs, setSongs] = useState([]);
@@ -21,7 +22,7 @@ const SongContainer = ({genres}) => {
     }
 
     return (
-        <>  
+        <div className="song-container">  
             <TitleBar
                 handleSelectChange={handleSelectChange}
                 genres={genres}
@@ -31,7 +32,7 @@ const SongContainer = ({genres}) => {
                 url={genres[0].url}
                 handleSelectChange={handleSelectChange}
             />
-        </>    
+        </div>    
     )
 }
 

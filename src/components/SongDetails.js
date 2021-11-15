@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import "./songDetails.css";
 
 function SongDetails({title, artist, position, image, audio}) {
 
@@ -19,6 +20,10 @@ function SongDetails({title, artist, position, image, audio}) {
 
   return (
     <div className="song">
+        <div className='details'>
+            <h3>{position}. {title}</h3>
+            <h4>{artist}</h4>
+      </div>
       <img
         alt={"Play " + altTag}
         id={position}
@@ -30,11 +35,6 @@ function SongDetails({title, artist, position, image, audio}) {
       <img
         src={image}
         alt={altTag} />
-
-      <div className='details'>
-        <h3>{position}. {title}</h3>
-        <h4>{artist}</h4>
-      </div>
 
       <audio
         ref={audioSrc}
